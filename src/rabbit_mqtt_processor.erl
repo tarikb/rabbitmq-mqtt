@@ -508,7 +508,7 @@ ensure_queue(Qos, #proc_state{ channels      = {Channel, _},
                    {undefined, _} ->
                        [];
                    {Ms, false} when is_integer(Ms) ->
-                       [{<<"x-expires">>, long, Ms}];
+                       [{<<"x-expires">>, long, Ms}, {<<"x-dead-letter-exchange">>, string, rabbit_mqtt_util:env(dead_letter_exchange)}];
                    _ ->
                        []
                end,

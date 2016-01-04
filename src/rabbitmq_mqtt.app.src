@@ -16,6 +16,7 @@
          %% only used by DETS store
          {retained_message_store_dets_sync_interval, 2000},
          {prefetch, 10},
+         {dead_letter_exchange, <<"dead_letter_excahnge">>},
          {ssl_listeners, []},
          {tcp_listeners, [1883]},
          {tcp_listen_options, [{backlog,   128},
